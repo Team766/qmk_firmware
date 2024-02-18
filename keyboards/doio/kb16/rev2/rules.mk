@@ -25,3 +25,4 @@ RGB_MATRIX_ENABLE = yes
 
 # Encoder enabled
 ENCODER_ENABLE = yes
+LTO_ENABLE = yes

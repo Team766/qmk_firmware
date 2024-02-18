@@ -22,7 +22,7 @@
 
 // Default timeout for displaying boot logo.
 #ifndef OLED_LOGO_TIMEOUT
-    #define OLED_LOGO_TIMEOUT 5000
+    #define OLED_LOGO_TIMEOUT 0
 #endif
 
 #ifdef OLED_ENABLE
