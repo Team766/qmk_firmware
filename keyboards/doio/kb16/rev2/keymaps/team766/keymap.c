@@ -54,9 +54,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 */
     /*  Row:    0         1        2        3         4      */
     [_BASE] = LAYOUT(
-                JS_0,     JS_1,    JS_2,    JS_3,     JS_0,
-                JS_4,     JS_5,    JS_6,    JS_7,     JS_1,
-                JS_8,     JS_9,    JS_10,   JS_11,    JS_15,
+                JS_0,     JS_1,    JS_2,    JS_3,     JS_4,
+                JS_4,     JS_5,    JS_6,    JS_7,     JS_8,
+                JS_8,     JS_9,    JS_10,   JS_11,    JS_12,
                 JS_12,    JS_13,   JS_14,   JS_15
             ),
 
@@ -128,7 +128,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #ifdef ENCODER_MAP_ENABLE
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [_BASE] = { ENCODER_CCW_CW(JS_0, JS_1), ENCODER_CCW_CW(JS_4, JS_5), ENCODER_CCW_CW(JS_8, JS_9) },
+    [_BASE] = { ENCODER_CCW_CW(JS_6, JS_7), ENCODER_CCW_CW(JS_10, JS_11), ENCODER_CCW_CW(JS_14, JS_15) },
     [_FN]   = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
     [_FN1]  = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
     [_FN2]  = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
