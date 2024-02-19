@@ -116,3 +116,6 @@ compile_commands.json
 # VIA(L) files that don't belong in QMK repo
 via*.json
 /keyboards/**/keymaps/vial/*
+keyboards/doio/kb16/.vscode/c_cpp_properties.json
+keyboards/doio/kb16/.vscode/settings.json
+.gitignore

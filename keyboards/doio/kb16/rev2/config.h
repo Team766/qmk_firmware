@@ -38,6 +38,7 @@
     #define RGB_MATRIX_DEFAULT_HUE 120
 
 
+
     /* RGB Matrix effect */
   /*#define ENABLE_RGB_MATRIX_ALPHAS_MODS
     #define ENABLE_RGB_MATRIX_GRADIENT_UP_DOWN

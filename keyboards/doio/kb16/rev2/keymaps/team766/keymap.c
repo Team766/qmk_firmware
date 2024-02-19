@@ -18,7 +18,7 @@
 #include QMK_KEYBOARD_H
 
 // OLED animation
-#include "./lib/layer_status/layer_status.h"
+//#include "./lib/layer_status/layer_status.h"
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 // The underscores don't mean anything - you can have a layer called STUFF or any other name.
@@ -56,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_BASE] = LAYOUT(
                 JS_0,     JS_1,    JS_2,    JS_3,     JS_0,
                 JS_4,     JS_5,    JS_6,    JS_7,     JS_1,
-                JS_8,     JS_9,    JS_10,   JS_11,    JS_15,
+                JS_8,     JS_9,    JS_10,   JS_11,    JS_3,
                 JS_12,    JS_13,   JS_14,   JS_15
             ),
 
@@ -117,18 +117,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 _______, RGB_VAI, RGB_HUD, RGB_VAD
             ),
 };
-
 #ifdef OLED_ENABLE
-    bool oled_task_user(void) {
-        render_layer_status();
+static void write_text(void) {
+		oled_write_P(PSTR("\n+==================+\n|   TEAM 766 #1    |\n+==================+\n"), false);
+}
 
-        return true;
-    }
+bool oled_task_user(void) {
+    write_text();
+    return false;
+}
 #endif
 
 #ifdef ENCODER_MAP_ENABLE
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [_BASE] = { ENCODER_CCW_CW(JS_0, JS_1), ENCODER_CCW_CW(JS_4, JS_5), ENCODER_CCW_CW(JS_8, JS_9) },
+    [_BASE] = { ENCODER_CCW_CW(JS_10, JS_11), ENCODER_CCW_CW(JS_12, JS_13), ENCODER_CCW_CW(JS_14, JS_15) },
     [_FN]   = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
     [_FN1]  = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
     [_FN2]  = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
