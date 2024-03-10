@@ -27,9 +27,7 @@
 
 enum layer_names {
     _BASE,
-    _FN,
-    _FN1,
-    _FN2
+    _FN
 };
 
 // enum layer_keycodes { };
@@ -79,43 +77,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 _______, _______, _______, _______
             ),
 
-/*
-       ┌───┬───┬───┬───┐   ┌───┐ ┌───┐
-       │   │   │   │   │   │   │ │   │
-       ├───┼───┼───┼───┤   └───┘ └───┘
-       │   │   │   │   │
-       ├───┼───┼───┼───┤
-       │   │   │   │   │      ┌───┐
-       ├───┼───┼───┼───┤      │   │
-       │   │   │   │   │      └───┘
-       └───┴───┴───┴───┘
-*/
-    /*  Row:    0        1        2        3        4       */
-    [_FN1] = LAYOUT(
-                _______, _______, _______, _______, _______,
-                _______, _______, _______, _______, TO(_FN2),
-                _______, _______, _______, _______, _______,
-                _______, _______, _______, _______
-            ),
-
-/*
-       ┌───┬───┬───┬───┐   ┌───┐ ┌───┐
-       │Spi│Spd│   │   │   │   │ │TO0│
-       ├───┼───┼───┼───┤   └───┘ └───┘
-       │Sai│Sad│   │   │
-       ├───┼───┼───┼───┤
-       │Tog│Mod│Hui│   │      ┌───┐
-       ├───┼───┼───┼───┤      │   │
-       │   │Vai│Hud│Vad│      └───┘
-       └───┴───┴───┴───┘
-*/
-    /*  Row:    0        1        2        3        4        */
-    [_FN2] = LAYOUT(
-                RGB_SPI, RGB_SPD, _______, QK_BOOT, _______,
-                RGB_SAI, RGB_SAD, _______, _______, TO(_BASE),
-                RGB_TOG, RGB_MOD, RGB_HUI, _______, _______,
-                _______, RGB_VAI, RGB_HUD, RGB_VAD
-            ),
 };
 
 #ifdef OLED_ENABLE
@@ -130,8 +91,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
     [_BASE] = { ENCODER_CCW_CW(JS_6, JS_7), ENCODER_CCW_CW(JS_10, JS_11), ENCODER_CCW_CW(JS_14, JS_15) },
     [_FN]   = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
-    [_FN1]  = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
-    [_FN2]  = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
 };
 #endif
 
